@@ -6,7 +6,7 @@ using System;
 
 public class DestinationIndication : MonoBehaviour
 {
-
+    // struct for combining items to pick and pick locations into one easy to use format
     struct Item_Location
     {
         public int item;
@@ -29,16 +29,16 @@ public class DestinationIndication : MonoBehaviour
     public List<GameObject> locations;
 
     public HUD hud;
+    public GameObject ui;
 
     private List<Item_Location> pickList;
 
     private int itemIndex;
     private AudioSource beep;
     private AudioSource boop;
-    public GameObject ui;
 
-    public float distance { get; set; }
-    public float distance2 { get; set; }
+    private float distance;
+    private float distance2;
     public int step { get; set; }
     private float waiter;
     private bool testing;
@@ -52,7 +52,7 @@ public class DestinationIndication : MonoBehaviour
 
     private const float scanDistance = 1.0f;
     private const float putDistance = 1.0f;
-    private const float testScanTimer = 0.5f;
+    private const float testScanTimer = 0.25f;
 
     // Use this for initialization
     void Start()
@@ -62,7 +62,7 @@ public class DestinationIndication : MonoBehaviour
         speech = ui.GetComponent<TextToSpeechManager>();
 
         calibrating = true;
-        AudioListener.volume = 10.0f;
+        AudioListener.volume = 1.0f;
 
         hud.SetDelegate(AfterHUDText);
 
@@ -156,22 +156,6 @@ public class DestinationIndication : MonoBehaviour
         hud.ShowText("Scan the next item: " + targets[pickList[itemIndex].item].name, false);
     }
 
-    private void InitPickList()
-    {
-        pickList = new List<Item_Location>();
-        itemIndex = 0;
-
-        //TEST - creating mockup picklist
-        pickList.Add(new Item_Location(0, 0));
-        pickList.Add(new Item_Location(1, 0));
-        pickList.Add(new Item_Location(0, 1));
-        pickList.Add(new Item_Location(1, 0));
-        pickList.Add(new Item_Location(1, 1));
-        pickList.Add(new Item_Location(1, 1));
-
-        targets[pickList[itemIndex].item].SetActive(true);
-    }
-
     private void InitTargets()
     {
         foreach (GameObject target in targets)
@@ -215,5 +199,22 @@ public class DestinationIndication : MonoBehaviour
     public void SpeakText(string text)
     {
         speech.SpeakText(text);
+    }
+
+    // TODO: replace with actual picklist
+    private void InitPickList()
+    {
+        pickList = new List<Item_Location>();
+        itemIndex = 0;
+
+        //TEST - creating mockup picklist
+        pickList.Add(new Item_Location(0, 0));
+        pickList.Add(new Item_Location(1, 0));
+        pickList.Add(new Item_Location(0, 1));
+        pickList.Add(new Item_Location(1, 0));
+        pickList.Add(new Item_Location(1, 1));
+        pickList.Add(new Item_Location(1, 1));
+
+        targets[pickList[itemIndex].item].SetActive(true);
     }
 }
