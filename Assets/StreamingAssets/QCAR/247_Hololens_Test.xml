@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="247QR" size="0.200000 0.200000" />
+    <ImageTarget name="qr_box_6740164570006" size="0.050000 0.050000" />
+    <ImageTarget name="qr_version2" size="0.200000 0.192500" />
+    <ImageTarget name="qr_gs1" size="0.200000 0.192929" />
+    <ImageTarget name="qr_laptop" size="0.100000 0.100000" />
+    <ImageTarget name="qr_screen" size="0.100000 0.100000" />
+  </Tracking>
+</QCARConfig>
