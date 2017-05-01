@@ -217,6 +217,10 @@ public class DestinationIndication : MonoBehaviour
         pickList.Add(new Item_Location(1, 1));
         pickList.Add(new Item_Location(0, 1));
         pickList.Add(new Item_Location(1, 0));
+        pickList.Add(new Item_Location(0, 0));
+        pickList.Add(new Item_Location(1, 1));
+        pickList.Add(new Item_Location(0, 1));
+        pickList.Add(new Item_Location(1, 0));
 
         targets[pickList[itemIndex].item].SetActive(true);
     }
