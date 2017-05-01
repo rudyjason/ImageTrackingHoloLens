@@ -124,7 +124,8 @@ public class DestinationIndication : MonoBehaviour
                 if (itemIndex >= pickList.Count)
                     itemIndex = 0;
                 targets[pickList[itemIndex].item].SetActive(true);
-                hud.ShowText("Scan the next item: " + targets[pickList[itemIndex].item].name, false);
+                hud.ShowText("Item placed correctly", true);
+                SpeakText("Scan the next item");
                 boop.Play();
             }
         }
@@ -146,6 +147,7 @@ public class DestinationIndication : MonoBehaviour
             calibrating = false;
             SpeakText("Calibration complete");
             hud.SetDelegate(AfterHUDText);
+            hud.SetShowTime(1);
             hud.ShowText("Calibration complete", true);
             RestartPicking();
         }
