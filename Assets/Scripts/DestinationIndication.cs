@@ -50,8 +50,8 @@ public class DestinationIndication : MonoBehaviour
     private bool calibrating;
     public bool stuckLocations = false;
 
-    private const float scanDistance = 1.0f;
-    private const float putDistance = 1.0f;
+    private const float scanDistance = 0.3f;
+    private const float putDistance = 0.25f;
     private const float testScanTimer = 0.25f;
 
     // Use this for initialization
@@ -124,6 +124,7 @@ public class DestinationIndication : MonoBehaviour
                 if (itemIndex >= pickList.Count)
                     itemIndex = 0;
                 targets[pickList[itemIndex].item].SetActive(true);
+                hud.SetShowTime(1);
                 hud.ShowText("Item placed correctly", true);
                 SpeakText("Scan the next item");
                 boop.Play();
@@ -147,7 +148,6 @@ public class DestinationIndication : MonoBehaviour
             calibrating = false;
             SpeakText("Calibration complete");
             hud.SetDelegate(AfterHUDText);
-            hud.SetShowTime(1);
             hud.ShowText("Calibration complete", true);
             RestartPicking();
         }
@@ -213,7 +213,9 @@ public class DestinationIndication : MonoBehaviour
         itemIndex = 0;
 
         //TEST - creating mockup picklist
+        pickList.Add(new Item_Location(0, 0));
         pickList.Add(new Item_Location(1, 1));
+        pickList.Add(new Item_Location(0, 1));
         pickList.Add(new Item_Location(1, 0));
 
         targets[pickList[itemIndex].item].SetActive(true);
