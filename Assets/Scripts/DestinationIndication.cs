@@ -169,6 +169,9 @@ public class DestinationIndication : MonoBehaviour
             dirInd.DirectionIndicatorObject = directionIndicator;
             dirInd.MetersFromCursor = 0.25f;
             dirInd.enabled = false;
+            //var rotation = location.transform.FindChild("target").transform.rotation;
+            //rotation.x = stuckLocations ? 0 : 90;
+            //location.transform.FindChild("target").transform.rotation = rotation;
             location.SetActive(calibrating);
         }
     }
@@ -208,12 +211,8 @@ public class DestinationIndication : MonoBehaviour
         itemIndex = 0;
 
         //TEST - creating mockup picklist
-        pickList.Add(new Item_Location(0, 0));
-        pickList.Add(new Item_Location(1, 0));
-        pickList.Add(new Item_Location(0, 1));
-        pickList.Add(new Item_Location(1, 0));
         pickList.Add(new Item_Location(1, 1));
-        pickList.Add(new Item_Location(1, 1));
+        pickList.Add(new Item_Location(1, 0));
 
         targets[pickList[itemIndex].item].SetActive(true);
     }

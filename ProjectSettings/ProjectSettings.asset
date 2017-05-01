@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: ImageTracking
+  companyName: 247 Dynamics
+  productName: ImageTrackingHoloLens
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
@@ -531,7 +531,7 @@ PlayerSettings:
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 80ce206ca1c6d301
-  metroApplicationDescription: ImageTracking
+  metroApplicationDescription: ImageTrackingHoloLens
   wsaImages: {}
   metroTileShortName: ImageTracking
   metroCommandLineArgsFile: 
