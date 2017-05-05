@@ -532,8 +532,9 @@ PlayerSettings:
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 80ce206ca1c6d301
   metroApplicationDescription: ImageTrackingHoloLens
-  wsaImages: {}
-  metroTileShortName: ImageTracking
+  wsaImages:
+    2228424: Assets/Sprites/icon.jpg
+  metroTileShortName: Image Tracking
   metroCommandLineArgsFile: 
   metroTileShowName: 0
   metroMediumTileShowName: 0
